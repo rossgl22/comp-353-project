@@ -19,4 +19,11 @@
 	<natures>
 		<nature>org.eclipse.php.core.PHPNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>rate_my_boss.sql</name>
+			<type>1</type>
+			<location>C:/EasyPHP-5.3.3/www/rate-my-boss/rate_my_boss.sql</location>
+		</link>
+	</linkedResources>
 </projectDescription>
