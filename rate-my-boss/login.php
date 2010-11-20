@@ -11,13 +11,14 @@
 							and password like binary '".$_POST["password"]."'");
 			include('db_close.php');
 			
-			if(isset($_POST["reponse"]) && ($row = mysql_fetch_array($resulT)))
+			if(isset($_POST["reponse"]) && ($row = mysql_fetch_array($result)))
 			{
+				#
 				if	($_POST["question"]==1)	
 				{ 
 					$answer = $row['answer1'];
 				}
-				else ($_POST["question"]==2)	
+				else if($_POST["question"]==2)	
 				{ 
 					$answer = $row['answer2']; 
 				}
@@ -45,6 +46,58 @@
 					}
 				}
 			}
+			else if($row = mysql_fetch_array($result)) #user and password exist
+			{
+				#will ask user a security question
+				$random = rand()%2;
+				$form = '<head><link>rel="stylesheet" type="text/css" href="setyle.css"/></head>
+								<form action = "login.php" method = post">';
+				
+				if ($random == 1)
+				{
+					$form = $form.$row['question1'];
+				} 
+				else 
+				{
+					$form = $form.$row['question2'];
+				}
+				$form = $form.'<br> <input type="text" class="input" name = "responce" />
+					<input type="hidden" name = "username" value= "'.$_POST["username"].'"/>
+					<input type="hidden" name = "password" value= "'.$_POST["password"].'"/>
+					<input type="hidden" name = "question" value= '.$random.'/>
+					<input type="submit" value="enter" class="button" /></form>';
+			}
+			else #user and pass do not exist
+			{
+				$errorMessage = '<font color = "red" > user authentication failed<br></font>';
+			}
 			
+		}
+		echo '<html>
+			<head><link rel="stylesheet" type="text/css" href="style.css"/></head>'
+			.$errorMessage; #outputs an error if it exists
+			
+		if ($form)
+		{
+			echo $form;
+		}
+		else
+		{
+			echo '<form action = "login.php" method = "post">
+				<table>
+				<tr>
+					<td>username:</td> 
+					<td><input type="text" name = "username"  class="input" /></td>
+				</tr>
+				<tr>
+					<td>password:</td>
+					<td><input type="password" name = "password" class="input" /></td>
+				</tr>
+				</table>
+				<input type="submit" value="log in" class="button" /> 
+				- <a href="registerreg.php">register</a>
+				- <a href="passwordReset.php">forgot your password</a>
+				</form> 
+				</html>';
 		}
 	?>
