@@ -83,6 +83,7 @@
 		}
 		else
 		{
+			#html stuff to show the page
 			echo '<form action = "login.php" method = "post">
 				<table>
 				<tr>
@@ -95,7 +96,7 @@
 				</tr>
 				</table>
 				<input type="submit" value="log in" class="button" /> 
-				- <a href="registerreg.php">register</a>
+				- <a href="create_user.php">register</a>
 				- <a href="passwordReset.php">forgot your password</a>
 				</form> 
 				</html>';
