@@ -31,7 +31,10 @@ echo $form = "<h2>Add a Supervisor</h2>
  		 </form>
  		 ";
  		 
- 		 
+if ( (is_numeric($var))) 
+
+
+
  		 ?>
 
 </body>
