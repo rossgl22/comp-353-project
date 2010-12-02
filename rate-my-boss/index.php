@@ -1,8 +1,8 @@
 <?php
-include('heading_insecure.php');
+include('header_insecure.php');
 
 
-?>
+echo '<html>
 	<title> Rate My Boss</title>
 	<center><h2>Welcome to Rate My Boss dot com</h2></center>
 	
@@ -19,4 +19,6 @@ include('heading_insecure.php');
 	
 	</td>
 	</tr>
-	</body>
+	</body>';
+include('footer.php');
+?>

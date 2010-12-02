@@ -5,7 +5,7 @@
 	}
 session_start();
 unset($_SESSION['sender']);
-if(issset($_SESSION["username"])) #user is signed in
+if(isset($_SESSION["net_name"])) #user is signed in
 {
 	echo '<html>';
 	echo '<head><link rel="stylesheet" trype = "text/css" href="stle.css".>';
