@@ -3,9 +3,9 @@ $sender = 'updateregistration.php';
 include('header.php');
 
 include("db_connect.php");
-$net_name = $_GET["username"];
+//$net_name = $_GET["username"];
 
-$query ="SELECT * FROM users where net_name = ".$_SESSION['username']."";
+$query ="SELECT * FROM users where net_name like '".$_SESSION['username']."'";
 
 if (!($result = @mysql_query($query, $con))) 
 {
@@ -27,7 +27,7 @@ else
 	$USERTYPE = mysql_result($result, 0, "usertype");
 }
   $type; //user_type in english
-  switch ($usertype) 
+  switch ($USERTYPE) 
   {
    case 1:
 	$type = 'Registered';
@@ -46,7 +46,7 @@ else
 	break;
 
    default:
-   	$type = 'Regsitered';
+   	$type = 'Registered';
   }
   
 include("db_close.php");
