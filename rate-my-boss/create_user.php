@@ -7,6 +7,7 @@ include("db_connect.php");
 $NET_NAME = $_POST["net_name"];
 $FIRST_NAME = $_POST['first_name'];
 $LAST_NAME = $_POST['last_name'];
+$ADDRESS = $_POST['address'];
 $CITY = $_POST["city"];
 $PROVINCE = $_POST["province"];
 $PASSWORD = $_POST["password"];
@@ -15,9 +16,9 @@ $QUESTION1 = $_POST["question1"];
 $ANSWER1 = $_POST["answer1"];
 $QUESTION2 = $_POST["question2"];
 $ANSWER2 = $_POST["answer2"];
-$USER_TYPE;
+$USERTYPE;
 #user type specific variables
-switch ($_POST['user_type'])
+switch ($_POST['usertype'])
 {
 	case "registered":
 		$usertype = 1;

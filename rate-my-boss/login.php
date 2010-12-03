@@ -4,7 +4,7 @@ $errorMessage = "";
 $form = NULL;
 session_start();
 if(isset($_POST["username"])) 
-{
+{#users has tried logging in
 	include('db_connect.php');
 	
 	#authentication
@@ -15,65 +15,16 @@ if(isset($_POST["username"]))
 	
 	
 	if($row = mysql_fetch_array($result))
-	{
-		
-//		#check which question the user answered
-//		if	($_POST["question"]==1)	
-//		{ 
-//			$answer = $row['answer1'];
-//		}
-//		else
-//		{ 
-//			$answer = $row['answer2']; 
-//		}		
-//				
-//		if(strcasecmp($_POST['response'],$answer)==0)
-//		{	#user answered security question correctly				
-			$_SESSION['username'] = $row['net_name'];
-			$_SESSION['usertype'] = $row['usertype'];
-////			$_SESSION['first_name'] = $row['first_name'];
-////			include('db_connect.php');
-////			if(!mysql_query("insert into logins values
-////				(".$row['id_user'].", '".date('Y-m-d h:m:s',time())."')"))
-////			{		
-////				die("mysql error".date('Y-m-d h:m:s',time()).mysql_error());
-////			}
-////			include('db_close.php');
-//			#send user to his homepage
-			if(isset($_SESSION['sender']))
-			{
-				header("location: ".$_SESSION['sender']);
-			}
-			header('location: my_page.php');					
-//		}
-//		else
-//		{
-//			$errorMessage = '<font color = "red" > Wrong answer<br></font>';
-//		}
+	{					
+		$_SESSION['username'] = $row['net_name'];
+		$_SESSION['usertype'] = $row['usertype'];
+		#send user to his homepage
+		if(isset($_SESSION['sender']))
+		{
+			header("location: ".$_SESSION['sender']);
+		}
+		header('location: my_page.php');
 	}
-//	else if($row = mysql_fetch_array($result)) #user and password exist
-//	{
-//		$errorMessage = '<font color = "red" > test3<br></font>';
-//		#will ask user a security question
-//		$random = rand()%2;#generates random # to pick question
-//		$form = '<head><link rel="stylesheet" type="text/css" href="style.css"/></head>
-//						<form action = "login.php" method = post">';
-//		
-//		if ($random == 1)
-//		{
-//			$form = $form.$row['question1'];
-//		} 
-//		else 
-//		{
-//			$form = $form.$row['question2'];
-//		}
-//		#creates box for the user to answer question and posts back to login.php
-//		$form = $form.'<br> <input type="text" class="input" name = "response" />
-//			<input type="hidden" name = "username" value= "'.$_POST["username"].'"/>
-//			<input type="hidden" name = "password" value= "'.$_POST["password"].'"/>
-//			<input type="hidden" name = "question" value= '.$random.'/>
-//			<input type="submit" value="enter" class="button" /></form>';
-//	}
 	else #user and pass do not exist
 	{
 		$errorMessage = '<font color = "red" > user authentication failed<br></font>';
