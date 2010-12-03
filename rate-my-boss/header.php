@@ -23,6 +23,6 @@ else {#user isn't logged in so send them to the login page
 	{
 		$_SESSION['sender'] = $sender;
 	}
-//	header('location: login.php');
+	header('location: login.php');
 }
 ?>

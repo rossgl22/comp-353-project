@@ -12,7 +12,7 @@ if(isset($_POST["username"]))
 					where net_name like binary '".$_POST["username"]."' 
 					and password like binary '".$_POST["password"]."'");
 	include('db_close.php');
-	$errorMessage = '<font color = "red" > test1<br></font>';
+	
 	
 	if($row = mysql_fetch_array($result))
 	{
@@ -29,8 +29,8 @@ if(isset($_POST["username"]))
 //				
 //		if(strcasecmp($_POST['response'],$answer)==0)
 //		{	#user answered security question correctly				
-//			$_SESSION['username'] = $row['net_name'];
-//			$_SESSION['usertype'] = $row['usertype'];
+			$_SESSION['username'] = $row['net_name'];
+			$_SESSION['usertype'] = $row['usertype'];
 ////			$_SESSION['first_name'] = $row['first_name'];
 ////			include('db_connect.php');
 ////			if(!mysql_query("insert into logins values

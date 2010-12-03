@@ -22,16 +22,17 @@ echo '<table height=75% width = 100%>';
 echo '<tr>';
 echo '<td width=20% class = "sidePanel">';
 	echo '<span style = "width:300px">';
-	echo '<br> a href = "index.php"> search RMB</a>';
-	echo '<br><a href = "contact.php"> contact us</a>';
-	echo '<br><a href = "help.php"> hel </a>';
-	echo $sidePanelText;
-	include('myInfo.php');
-	echo '<a href="updateregistration.php"> update my profile</a><br>';
-	if($_SESSION['usertype']=1)
+	echo '<br><a href = "index.php"> search RMB</a>';
+	if($_SESSION['usertype']==1)
 	{
-		echo '<br> a href = "add_organization.php" add an organization</a>';		
+		echo '<br><a href = "add_organization.php" add an organization</a>';		
 	}
+	echo '<br><a href = "contact.php"> contact us</a>';
+	echo '<br><a href = "help.php"> help </a>';
+//	echo $sidePanel;
+	include('myInfo.php');
+	echo '<br><a href="updateregistration.php"> update my profile</a><br>';
+	
 	echo '</span>';
 echo '<td>';
 echo '<td class = "mainWindow">'; 
