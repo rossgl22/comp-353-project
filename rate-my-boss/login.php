@@ -2,7 +2,7 @@
 #login functions
 $errorMessage = "";
 $form = NULL;
-//session_start();
+session_start();
 if(isset($_POST["username"])) 
 {#users has tried logging in
 	include('db_connect.php');

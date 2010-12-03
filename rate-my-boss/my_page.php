@@ -3,7 +3,8 @@
 $sender = 'my_page.php';
 include("header.php");#all pages need to have the header
 
-switch($_SESSION['usertype'])#this switch statement sets the current setting
+$usertype = $_SESSION['usertype'];
+switch($usertype)#this switch statement sets the current setting
 {
 	case 1: #registered user
 		echo '<title>'.$_SESSION["username"].' - registered user</title>';
@@ -28,7 +29,7 @@ echo '<td width=20% class = "sidePanel">';
 		echo '<br><a href = "add_organization.php" add an organization</a>';		
 	}
 	echo '<br><a href = "contact.php"> contact us</a>';
-	echo '<br><a href = "help.php"> help </a>';
+	echo '<br><a href = "help.php"> help </a><br>';
 //	echo $sidePanel;
 	include('myInfo.php');
 	echo '<br><a href="updateregistration.php"> update my profile</a><br>';
