@@ -5,7 +5,7 @@
 	}
 session_start();
 unset($_SESSION['sender']);
-if(isset($_SESSION["net_name"])) #user is signed in
+if(isset($_SESSION["username"])) #user is signed in
 {
 	echo '<html>';
 	echo '<head><link rel="stylesheet" trype = "text/css" href="stle.css".>';
@@ -23,6 +23,6 @@ else {#user isn't logged in so send them to the login page
 	{
 		$_SESSION['sender'] = $sender;
 	}
-	header('location: login.php');
+//	header('location: login.php');
 }
 ?>
