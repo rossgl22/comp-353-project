@@ -54,7 +54,7 @@ else
 		</tr>
 		</table>
 		<input type="submit" value="log in" class="button" /> 
-		- <a href="create_user.php">register</a>
+		- <a href="registration.php">register</a>
 		- <a href="passwordReset.php">forgot your password</a>
 		</form> 
 		</html>';
