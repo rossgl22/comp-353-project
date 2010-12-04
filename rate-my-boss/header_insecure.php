@@ -20,15 +20,15 @@ if(isset($_SESSION["net_name"]))#user is logged in
 }
 else#welcome guest
 {	
-	if($sender)
-	{
-		$_SESSION['sender'] = $sender;
-	}
+//	if($sender)
+//	{
+//		$_SESSION['sender'] = $sender;
+//	}
 	echo '<html>';
 	echo '<head><link rel="stylesheet" type="text/css" href="style.css"/>';
-	echo '<div class = "header">';#HEADER
+	echo '<div class = "header">';
 	echo 'Logged in as: guest <a href="login.php">log in</a> - 
-		<a href="registerreg.php">register</a> -
+		<a href="registration.php">register</a> -
  		<a href="contactform.php">contact us</a> - 
 		<a href="help.php">help</a>';
 	echo '</head>';
