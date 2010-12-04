@@ -9,11 +9,11 @@ echo '<html>
 	<body>
 	<tr> 
 	<td> 
-		<center> 
+		<center>'; 
 		
+		include('search.php');
 		
-		
-		</center>
+echo '</center>
 		
 		
 	
