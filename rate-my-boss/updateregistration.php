@@ -65,14 +65,14 @@ include("db_close.php");
 	</select><br>
 	<u><h3>Enter Personal Information</u>:</h3>
 	
-	Company: <input type= "text" name="company" value="<? echo $company;?>" MAXLENGTH=40/><br>
-	First Name:	<input type= "text" name="first_name" value="<? echo $first_name;?>" MAXLENGTH=40/><br>
+	First Name:	<input type= "text" name="first_name" value= <?echo $first_name;?> MAXLENGTH=40/><br>
 	Last Name:	<input type= "text" name="last_name" value="<? echo $last_name;?>" MAXLENGTH=40/><br>
 	Address:	<input type= "text" name="address" value="<? echo $address;?>" MAXLENGTH=40/><br>
 	City:		<input type= "text" name="city" value="<? echo $city;?>" MAXLENGTH=40/><br>
 	Province:	<input type= "text" name="province" value="<? echo $province;?>" MAXLENGTH=25/><br>
 	Postal Code:	<input type= "text" name="postal_code" value="<? echo $postal_code;?>" MAXLENGTH=6/><br><br>
 	Email Address:	<input type= "text" name="email" value="<? echo $email;?>" MAXLENGTH=40/><br>
+	Company: <input type= "text" name="company" value="<? echo $company;?>" MAXLENGTH=40/><br>
 	
 	Question 1:	<input type= "text" name="question1" value="<? echo $question1;?>" MAXLENGTH=40/><br> 
 	Secret Answer 1:<input type= "text" name="answer1" value="<? echo $answer1;?>" MAXLENGTH=40/><br>	
