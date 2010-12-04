@@ -3,23 +3,30 @@
 include ("header.php");
 include ("db_connect.php");
 
-$query = "SELECT net_name, first_name, last_name FROM users";
+$query = "SELECT net_name, first_name, last_name FROM users WHERE usertype != 2";
 $result = mysql_query($query);
 ?>
+<u><h1><p style="text-align: center;">Remove Users</p></h1></u>
 
-<form name = "look_and_remove" method="post" action="action_remove_user.php" onSubmit="returnValidateForm()">
+<form name = "look_and_remove" method="post" action="action_remove_user.php" 
+	onSubmit="returnValidateForm()">
 
 <?php 
 while($row = mysql_fetch_array($result, MYSQL_ASSOC))
 {
-	echo "net name: {$row['net_name']} ".
-		"first name: {$row['first_name']} ".
-		"last name: {$row['last_name']} ";
-		
-	
+	echo "<input name = 'names' type = radio  value = ".$row['net_name'].">
+	{$row['first_name']} 
+	{$row['last_name']} ";
+//	if($_POST['names'] == $row['net_name'])
+//	{
+//		echo "checked";
+//	}
 	echo "<br>";
 }
-include ("db_close.php");
 ?>
+<input type = submit  value=submit>
+<input type = reset  value = reset>
 
-<!--mysql_query("DELETE FROM users WHERE net_name like '".$row['net_name']."'"; ?>" /> -->
+</form>
+<?php 
+include ("db_close.php");?>

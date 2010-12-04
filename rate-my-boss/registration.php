@@ -4,7 +4,8 @@ include("header_insecure.php");
 
 <u><h1><p style="text-align: center;">REGISTER</p></h1></u>
 
-<form name="registerForm" method="post" action="action_create_user.php" onSubmit="returnValidateFormReg()">
+<form name="registerForm" method="post" 
+	action="action_create_user.php" onSubmit="returnValidateFormReg()">
 
 	<u><h3>Choose User Type</u>:</h3>
 	
