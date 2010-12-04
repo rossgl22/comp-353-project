@@ -38,6 +38,17 @@ echo '<td width=20% class = "sidePanel">';
 	echo '</span>';
 echo '<td>';
 echo '<td class = "mainWindow">'; 
+if($_SESSION['usertype']==2)#person is an admin
+{
+	echo '<br><a href = "check_organizations.php">check for new organizations</a>';
+	echo '<br><a href = "remove_user.php">remove user</a>';
+	echo '<br><a href = "remove_comments.php">remove comments</a>';
+	echo '<br><a href = "remove_ad.php">remove ad</a>';
+}
+if($_SESSION['usertype']==3)#person is a financial controller
+{
+	echo '<br><a href= "edit_ad_prices.php">edit ad prices</a>';
+}
 if($_SESSION['usertype']!=4)#ads aren't shown to the people who put up the ads
 {
 	include('seeAds.php');
