@@ -5,7 +5,8 @@ include('header.php');
 
 <u><h1><p style="text-align: center:">Add a Rating to an Organization</p></h1></u>
 
-<form name= "orgRatingForm" method="post" action="action_addorg_rating.php" onSubmit="returnValidateFormReg()">
+<form name= "orgRatingForm" method="post" action="action_addorg_rating.php" 
+onSubmit="returnValidateFormReg()">
 
 	<u><h3>Choose Organization</h3></u>
 	<?php  
