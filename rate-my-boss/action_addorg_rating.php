@@ -6,44 +6,47 @@ include("db_connect.php");
 
 
 #variables
+$NAME = $_POST["name"];
 $SOCIAL_VALUES = $_POST["social_values"];
-$QUALITY_WORKPLACE = $_POST["quality_workplace"];
-$PROFESSIONALISM_MANAGEMENT = $_POST["professinalism_management"];
+$QUALITY_WORKPLACE = $_POST["quality_of_workplace"];
+$PROFESSIONALISM_MANAGEMENT = $_POST["professionalism_management"];
 $FAIRNESS_EVAL = $_POST["fairness_eval"];
-$OPENNESS_WITH_STAFF = $_POST["openness_w_staff"];
-$COOPERATION_AMONG_EMPLOYEE = $_POST["cooperation_among_employee"];
+$OPENNESS_WITH_STAFF = $_POST["openness_with_staff"];
+$COOPERATION_AMONG_EMPLOYEES = $_POST["cooperation_employees"];
 $ENCOURAGE_INNOVATION = $_POST["encourage_innovation"];
-$REWARD_SYSTEM = $_POST["reward_system"];
+$REWARD_SYSTEM = $_POST["rewards"];
 $ACCEPTANCE_IDEAS = $_POST["acceptance_ideas"];
-$FAIR_WAGES = $_POST["wages"];
+$WAGES = $_POST["fair_wages"];
 $RECOGNITION_ACHIEVEMENT = $_POST["recognition_achievement"];
-$QUALITY_BENEFITS = $_POST["quality_benefits"];
-$SUPPORT_EMPLOYEE = $_POST["support_employees"];
-$LEVEL_STRESS = $_POST["level_stress"];
-$LEVEL_COLLEGIALITY = $_POST["level_collegiality"];
-$LEVEL_BUREACRACY = $_POST["level_bureacracy"];
-$POSSIBILITY_ADVANCEMENT = $_POST["possibility_advancement"];
-$SUPPORT_FAMILY = $_POST["support_family"];
+$QUALITY_BENEFITS = $_POST["benefits"];
+$SUPPORT_EMPLOYEES = $_POST["support"];
+$LEVEL_STRESS = $_POST["stress"];
+$LEVEL_COLLEGIALITY = $_POST["collegiality"];
+$LEVEL_BUREACRACY = $_POST["bureaucracy_red_tape"];
+$POSSIBILITY_ADVANCEMENT = $_POST["advancement"];
+$SUPPORT_FAMILY = $_POST["family_support"];
 #/variables
 
 	#statements to insert into the database
-	$statement = "insert into rating (social_values, quality_workplace, professionalism_management,
-						fairness_eval, openness_w_staff, cooperation_among_employees,
-						encourage_innovation, reward_system, acceptance_ideas, wages,
-						recognition_achievement, quality_benefits, support_employees,
-						level_stress, level_collegiality, level_bureacracy, possibility_advancement,
-						support_family) 
-				values
-				('$social_values', '$quality_workplace', '$professionalism_management',
-					'$fairness_eval', '$openness_w_staff', '$cooperation_among_employees',
-					'$encourage_innovation', '$reward_system', '$acceptance_ideas', '$wages',
-					'$recognition_achievement', '$quality_benefits', '$support_employees',
-					'$level_stress', '$level_collegiality', '$level_bureacracy', '$possibility_advancement',
-					'$support_family)";
-	if(!($result = mysql_query($statement, $connection)))
+	$statement = "INSERT INTO rating (orgname, social_values, quality_of_workplace, professionalism_management,
+						fairness_eval, openness_with_staff, cooperation_employees,
+						encourage_innovation, rewards, acceptance_ideas, fair_wages,
+						recognition_achievement, benefits, support,
+						stress, collegiality, bureacracy_red_tape, advancement,
+						family_support)". 
+				"VALUES
+				('$NAME', '$SOCIAL_VALUES', '$QUALITY_WORKPLACE', '$PROFESSIONALISM_MANAGEMENT',
+					'$FAIRNESS_EVAL', '$OPENNESS_WITH_STAFF', '$COOPERATION_AMONG_EMPLOYEES',
+					'$ENCOURAGE_INNOVATION', '$REWARD_SYSTEM', '$ACCEPTANCE_IDEAS', '$WAGES',
+					'$RECOGNITION_ACHIEVEMENT', '$QUALITY_BENEFITS', '$SUPPORT_EMPLOYEES',
+					'$LEVEL_STRESS', '$LEVEL_COLLEGIALITY', '$LEVEL_BUREACRACY', '$POSSIBILITY_ADVANCEMENT',
+					'$SUPPORT_FAMILY')";
+	if(!($result = MYSQL_QUERY($statement)))
 	{
 		showerror();#something went wrong in the insertion
 	}
+	echo "Rating accepted!<br>
+	<a href='my_page.php'>return to home page</a>";
 include ("db_close.php");
 include ("footer.php");
 ?>

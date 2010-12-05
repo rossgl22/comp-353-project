@@ -26,8 +26,8 @@ echo '<td width=20% class = "sidePanel">';
 	echo '<br><a href = "index.php"> search RMB</a>';
 	if($_SESSION['usertype']==1)
 	{
-		echo '<br>test';
-		echo '<br><a href = "add_organization.php"> add an organization</a>';		
+		echo '<br><a href = "add_organization.php"> add an organization</a>';	
+		echo '<br><a href = "addorg_rating.php"> rate an organization</a>';	
 	}
 	echo '<br><a href = "contact.php"> contact us</a>';
 	echo '<br><a href = "help.php"> help </a><br>';
