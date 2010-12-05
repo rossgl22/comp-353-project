@@ -23,7 +23,7 @@ echo '<table height=75% width = 100%>';
 echo '<tr>';
 echo '<td width=20% class = "sidePanel">';
 	echo '<span style = "width:300px">';
-	echo '<br><a href = "index.php"> search RMB</a>';
+//	echo '<br><a href = "index.php"> search RMB</a>';
 	if($_SESSION['usertype']==1)
 	{
 		echo '<br><a href = "add_organization.php"> add an organization</a>';	
@@ -49,11 +49,12 @@ if($_SESSION['usertype']==3)#person is a financial controller
 {
 	echo '<br><a href= "edit_ad_prices.php">edit ad prices</a>';
 }
+include('search.php');
 if($_SESSION['usertype']!=4)#ads aren't shown to the people who put up the ads
 {
 	include('seeAds.php');
 }
-include('search.php');
+
 
 echo'</td></tr></table>';
 include('footer.php');
