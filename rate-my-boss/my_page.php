@@ -53,7 +53,7 @@ if($_SESSION['usertype']!=4)#ads aren't shown to the people who put up the ads
 {
 	include('seeAds.php');
 }
-
+include('search.php');
 
 echo'</td></tr></table>';
 include('footer.php');
