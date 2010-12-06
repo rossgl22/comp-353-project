@@ -18,7 +18,7 @@ echo '<h1>Advertisements</h1>
 //We connect to the db to match the user id to his advertisements
 include('db_connect.php'); 
 $result = mysql_query('select * from advertisers x where 
-			 x.id_user = '.$_SESSION['id_user']);
+			 x.net_name = '.$_SESSION['net_name']);
 
 include('db_close.php');
 
