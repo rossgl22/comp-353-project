@@ -39,3 +39,6 @@ include("header_insecure.php");
 	<input type="reset" value="reset"/><br>
 	</form>
 	<br>
+	
+	
+	<?php include('footer.php');?>

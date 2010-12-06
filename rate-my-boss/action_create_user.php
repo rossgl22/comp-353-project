@@ -1,6 +1,6 @@
 <?php
 #user creation
-//include("header_insecure.php");
+include("header_insecure.php");
 include("db_connect.php");
 
 #variables

@@ -29,5 +29,5 @@ else
 }
 
 include("db_close.php");
-
+include('footer.php');
 ?>

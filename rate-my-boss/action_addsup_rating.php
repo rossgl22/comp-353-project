@@ -2,13 +2,13 @@
 include('header.php');
 include('db_connect.php');
 
-$ID = $_POST["sup_id"];
-$COMPANY = $_POST["company"];
-$COMMENTS = $_POST["comments"];
+$ID = $_POST['sup_id'];
+$COMPANY = $_POST['company'];
+$COMMENTS = $_POST['comments'];
 
-
-$query = MYSQL_QUERY("INSERT INTO supervisor_comments (id_num, comments, orgname)  
-	VALUES ('$ID', '$COMMENTS', '$COMPANY')") 
+$statement = "INSERT INTO supervisor_comments 
+	VALUES ('".$ID."', '".$COMMENTS."', '".$COMPANY."')";
+$query = MYSQL_QUERY($statement)
 	or die("Query failed with error: ".MYSQL_ERROR());
 ?>
 Your comments will be reviewed by a system administrator and removed if deemed inappropriate.
