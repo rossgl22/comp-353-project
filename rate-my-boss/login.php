@@ -1,4 +1,5 @@
 <?php
+include('header_insecure.php');
 #login functions
 $errorMessage = "";
 $form = NULL;
@@ -59,4 +60,6 @@ else
 		</form> 
 		</html>';
 }
+include('footer.php');
+?>
 	

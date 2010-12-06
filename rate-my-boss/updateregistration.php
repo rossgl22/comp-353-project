@@ -82,25 +82,4 @@ include("db_close.php");
 	<input type="submit" value="Submit"/>
   	<input type="reset" value="Reset"/><br>
  </form>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+ <?php 	include('footer.php');?>

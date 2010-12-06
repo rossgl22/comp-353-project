@@ -15,4 +15,5 @@ while($row = mysql_fetch_array($result, MYSQL_ASSOC))
 }
 
 include("footer.php");
+include('db_close.php');
 ?>

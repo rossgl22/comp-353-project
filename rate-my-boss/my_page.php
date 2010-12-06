@@ -30,6 +30,10 @@ echo '<td width=20% class = "sidePanel">';
 		echo '<br><a href = "addorg_rating.php"> rate an organization</a>';	
 		echo '<br><a href = "add_supervisor.php"> add a supervisor</a>';	
 	}
+	if($_SESSION['usertype']==3)#person is a financial controller
+{
+	echo '<br><a href= "edit_ad_prices.php">edit ad prices</a>';
+}
 	echo '<br><a href = "contact.php"> contact us</a>';
 	echo '<br><a href = "help.php"> help </a><br>';
 //	echo $sidePanel;
@@ -45,11 +49,9 @@ if($_SESSION['usertype']==2)#person is an admin
 	echo '<br><a href = "remove_user.php">remove user</a>';
 	echo '<br><a href = "remove_comments.php">remove comments</a>';
 	echo '<br><a href = "remove_ad.php">remove ad</a>';
+	echo '<br><a href = "reports.php">Check stats</a>';	
 }
-if($_SESSION['usertype']==3)#person is a financial controller
-{
-	echo '<br><a href= "edit_ad_prices.php">edit ad prices</a>';
-}
+
 include('search.php');
 if($_SESSION['usertype']!=4)#ads aren't shown to the people who put up the ads
 {

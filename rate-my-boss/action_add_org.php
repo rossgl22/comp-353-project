@@ -1,4 +1,5 @@
 <?php
+include('header.php');
 include("db_connect.php");
 #variables
 $NAME = $_POST["name"];
@@ -45,5 +46,6 @@ $PROVINCE = $_POST["province"];
 			<a href='my_page.php'>my page</a>";
 	}
 //}
+include('footer.php');
 include ("db_close.php");
 ?>

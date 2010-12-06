@@ -12,5 +12,5 @@ Choose a file to upload: <input name=uploadedfile type=file /><br />
 $target_path = "uploads/"; 
 $target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
 
-
+include('footer.php');
 ?>

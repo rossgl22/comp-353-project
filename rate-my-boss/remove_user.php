@@ -29,4 +29,5 @@ while($row = mysql_fetch_array($result, MYSQL_ASSOC))
 
 </form>
 <?php 
-include ("db_close.php");?>
+include ("db_close.php");
+include('footer.php');?>
