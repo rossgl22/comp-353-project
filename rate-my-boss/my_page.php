@@ -29,6 +29,8 @@ echo '<td width=20% class = "sidePanel">';
 		echo '<br><a href = "add_organization.php"> add an organization</a>';	
 		echo '<br><a href = "addorg_rating.php"> rate an organization</a>';	
 		echo '<br><a href = "add_supervisor.php"> add a supervisor</a>';	
+		echo '<br><a href = "update_rating.php"> update organization rating</a>';
+		echo '<br><a href = "update_comments.php"> update supervisor comments</a>';
 	}
 	if($_SESSION['usertype']==3)#person is a financial controller
 {
