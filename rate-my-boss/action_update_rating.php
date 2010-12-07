@@ -6,7 +6,7 @@ include("db_connect.php");
 
 
 #variables
-$NAME = $_POST["name"];
+$ID = $_POST["id"];
 $SOCIAL_VALUES = $_POST["social_values"];
 $QUALITY_WORKPLACE = $_POST["quality_of_workplace"];
 $PROFESSIONALISM_MANAGEMENT = $_POST["professionalism_management"];
@@ -22,31 +22,22 @@ $QUALITY_BENEFITS = $_POST["benefits"];
 $SUPPORT_EMPLOYEES = $_POST["support"];
 $LEVEL_STRESS = $_POST["stress"];
 $LEVEL_COLLEGIALITY = $_POST["collegiality"];
-$LEVEL_BUREACRACY = $_POST["bureaucracy_red_tape"];
+$LEVEL_BUREAUCRACY = $_POST["bureaucracy_red_tape"];
 $POSSIBILITY_ADVANCEMENT = $_POST["advancement"];
 $SUPPORT_FAMILY = $_POST["family_support"];
 #/variables
 
 	#statements to insert into the database
-	$statement = "INSERT INTO rating (orgname, social_values, quality_of_workplace, professionalism_management,
-						fairness_eval, openness_with_staff, cooperation_employees,
-						encourage_innovation, rewards, acceptance_ideas, fair_wages,
-						recognition_achievement, benefits, support,
-						stress, collegiality, bureaucracy_red_tape, advancement,
-						family_support)". 
-				"VALUES
-				('$NAME', '$SOCIAL_VALUES', '$QUALITY_WORKPLACE', '$PROFESSIONALISM_MANAGEMENT',
-					'$FAIRNESS_EVAL', '$OPENNESS_WITH_STAFF', '$COOPERATION_AMONG_EMPLOYEES',
-					'$ENCOURAGE_INNOVATION', '$REWARD_SYSTEM', '$ACCEPTANCE_IDEAS', '$WAGES',
-					'$RECOGNITION_ACHIEVEMENT', '$QUALITY_BENEFITS', '$SUPPORT_EMPLOYEES',
-					'$LEVEL_STRESS', '$LEVEL_COLLEGIALITY', '$LEVEL_BUREACRACY', '$POSSIBILITY_ADVANCEMENT',
-					'$SUPPORT_FAMILY')";
-	if(!($result = MYSQL_QUERY($statement)))
-	{
-		showerror();#something went wrong in the insertion
-	}
+	$statement = "UPDATE rating set social_values=$SOCIAL_VALUES, quality_of_workplace= $QUALITY_WORKPLACE, professionalism_management=$PROFESSIONALISM_MANAGEMENT,
+						fairness_eval=$FAIRNESS_EVAL, openness_with_staff=$OPENNESS_WITH_STAFF, cooperation_employees= $COOPERATION_AMONG_EMPLOYEES,
+						encourage_innovation=$ENCOURAGE_INNOVATION, rewards=$REWARD_SYSTEM, acceptance_ideas=$ACCEPTANCE_IDEAS, fair_wages=$WAGES,
+						recognition_achievement=$RECOGNITION_ACHIEVEMENT, benefits=$QUALITY_BENEFITS, support=$SUPPORT_EMPLOYEES,
+						stress=$LEVEL_STRESS, collegiality = $LEVEL_COLLEGIALITY, bureaucracy_red_tape=$LEVEL_BUREAUCRACY, advancement=$POSSIBILITY_ADVANCEMENT,
+						family_support=$SUPPORT_FAMILY WHERE id = $ID";
+	$result = MYSQL_QUERY($statement) or die("Error : ".MYSQL_ERROR());
+	
 	echo "Rating accepted!<br>
-	If you would like to update your comments their id number is" .MYSQL_INSERT_ID(); 
+	If you would like to update your comments their id number is" .$ID; 
 	echo "<br><a href='my_page.php'>return to home page</a>";
 include ("db_close.php");
 include ("footer.php");
